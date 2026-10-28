@@ -1,0 +1,358 @@
+{
+  "items": [
+    {
+      "id": "EQ-001",
+      "name": "Handheld Radio · R-104",
+      "category": "Communications",
+      "sku": "COM-R104",
+      "location": "Equipment Locker A",
+      "total": 8,
+      "condition": "Good",
+      "serial": "R104-series",
+      "reorderPoint": 2,
+      "notes": "Eight numbered handheld radios"
+    },
+    {
+      "id": "EQ-002",
+      "name": "Ground Team Pack",
+      "category": "Field Equipment",
+      "sku": "GT-220",
+      "location": "Storage Cabinet B",
+      "total": 6,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 2,
+      "notes": "Standard response kits"
+    },
+    {
+      "id": "EQ-003",
+      "name": "ABU Blouse · Medium",
+      "category": "Uniforms",
+      "sku": "UNI-ABU-M",
+      "location": "Uniform Closet",
+      "total": 24,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 5,
+      "notes": ""
+    },
+    {
+      "id": "EQ-004",
+      "name": "ABU Trousers · 32R",
+      "category": "Uniforms",
+      "sku": "UNI-TR-32",
+      "location": "Uniform Closet",
+      "total": 18,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 4,
+      "notes": ""
+    },
+    {
+      "id": "EQ-005",
+      "name": "Reflective Safety Vest",
+      "category": "Field Equipment",
+      "sku": "SAFE-VEST",
+      "location": "Cabinet B",
+      "total": 13,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 3,
+      "notes": ""
+    },
+    {
+      "id": "EQ-006",
+      "name": "High-Visibility Flashlight",
+      "category": "Field Equipment",
+      "sku": "LIGHT-HV",
+      "location": "Equipment Locker A",
+      "total": 9,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 2,
+      "notes": ""
+    },
+    {
+      "id": "EQ-007",
+      "name": "First Aid Kit",
+      "category": "Medical & Safety",
+      "sku": "MED-KIT",
+      "location": "Cabinet C",
+      "total": 5,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 2,
+      "notes": "Training-use kits only"
+    },
+    {
+      "id": "EQ-008",
+      "name": "Safety Goggles",
+      "category": "Medical & Safety",
+      "sku": "SAFE-EYE",
+      "location": "Cabinet C",
+      "total": 11,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 3,
+      "notes": ""
+    },
+    {
+      "id": "EQ-009",
+      "name": "Batteries · AA 4-pack",
+      "category": "Consumables",
+      "sku": "BAT-AA4",
+      "location": "Supply Drawer",
+      "total": 48,
+      "condition": "New",
+      "serial": "",
+      "reorderPoint": 10,
+      "notes": "Four-pack units"
+    },
+    {
+      "id": "EQ-010",
+      "name": "Printer Paper · Ream",
+      "category": "Consumables",
+      "sku": "OFF-PAPER",
+      "location": "Office Closet",
+      "total": 7,
+      "condition": "New",
+      "serial": "",
+      "reorderPoint": 3,
+      "notes": ""
+    },
+    {
+      "id": "EQ-011",
+      "name": "Traffic Cone",
+      "category": "Field Equipment",
+      "sku": "SAFE-CONE",
+      "location": "Storage Cabinet B",
+      "total": 12,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 4,
+      "notes": ""
+    },
+    {
+      "id": "EQ-012",
+      "name": "Portable Charger",
+      "category": "Electronics",
+      "sku": "EL-CHG",
+      "location": "Locker A",
+      "total": 4,
+      "condition": "Good",
+      "serial": "",
+      "reorderPoint": 2,
+      "notes": ""
+    }
+  ],
+  "loans": [
+    {
+      "id": "LN-001",
+      "itemId": "EQ-001",
+      "member": "Miller",
+      "quantity": 2,
+      "checkedOutAt": "2026-10-25",
+      "dueAt": "2026-11-01",
+      "returnedAt": "",
+      "issuedBy": "Demo Admin",
+      "returnedBy": "",
+      "note": "",
+      "issueType": "temporary"
+    },
+    {
+      "id": "LN-002",
+      "itemId": "EQ-002",
+      "member": "Reed",
+      "quantity": 3,
+      "checkedOutAt": "2026-10-18",
+      "dueAt": "2026-10-26",
+      "returnedAt": "",
+      "issuedBy": "Demo Admin",
+      "returnedBy": "",
+      "note": "",
+      "issueType": "temporary"
+    },
+    {
+      "id": "LN-003",
+      "itemId": "EQ-003",
+      "member": "Collins",
+      "quantity": 5,
+      "checkedOutAt": "2026-10-19",
+      "dueAt": "",
+      "returnedAt": "",
+      "issuedBy": "Demo Admin",
+      "returnedBy": "",
+      "note": "",
+      "issueType": "unknown"
+    },
+    {
+      "id": "LN-004",
+      "itemId": "EQ-005",
+      "member": "Baker",
+      "quantity": 3,
+      "checkedOutAt": "2026-10-27",
+      "dueAt": "2026-11-03",
+      "returnedAt": "",
+      "issuedBy": "Demo Admin",
+      "returnedBy": "",
+      "note": "",
+      "issueType": "temporary"
+    },
+    {
+      "id": "LN-005",
+      "itemId": "EQ-006",
+      "member": "Parker",
+      "quantity": 2,
+      "checkedOutAt": "2026-10-22",
+      "dueAt": "2026-11-06",
+      "returnedAt": "",
+      "issuedBy": "Demo Admin",
+      "returnedBy": "",
+      "note": "",
+      "issueType": "temporary"
+    },
+    {
+      "id": "LN-006",
+      "itemId": "EQ-007",
+      "member": "Hayes",
+      "quantity": 1,
+      "checkedOutAt": "2026-10-10",
+      "dueAt": "2026-10-23",
+      "returnedAt": "2026-10-24",
+      "issuedBy": "Demo Admin",
+      "returnedBy": "Demo Admin",
+      "note": "",
+      "issueType": "temporary"
+    },
+    {
+      "id": "LN-007",
+      "itemId": "EQ-014",
+      "member": "Davis",
+      "quantity": 2,
+      "checkedOutAt": "2026-10-27",
+      "dueAt": "",
+      "returnedAt": "",
+      "issuedBy": "Demo Admin",
+      "returnedBy": "",
+      "note": "Fictional insignia permanently issued",
+      "grade": "C/SSgt",
+      "issueType": "permanent"
+    }
+  ],
+  "orders": [
+    {
+      "id": "PO-001",
+      "name": "Safety Vests",
+      "category": "Field Equipment",
+      "quantity": 12,
+      "source": "Equipment Supplier",
+      "eta": "2026-11-03",
+      "status": "Ordered",
+      "receivedAt": "",
+      "notes": "",
+      "sku": "SAFE-VEST",
+      "location": "Cabinet B",
+      "itemId": "EQ-005"
+    },
+    {
+      "id": "PO-002",
+      "name": "ABU Blouses · Medium",
+      "category": "Uniforms",
+      "quantity": 10,
+      "source": "Uniform Exchange",
+      "eta": "2026-11-06",
+      "status": "In Transit",
+      "receivedAt": "",
+      "notes": "",
+      "sku": "UNI-ABU-M",
+      "location": "Uniform Closet",
+      "itemId": "EQ-003"
+    },
+    {
+      "id": "PO-003",
+      "name": "AA Battery 4-Packs",
+      "category": "Consumables",
+      "quantity": 20,
+      "source": "Local Supply",
+      "eta": "2026-10-31",
+      "status": "Ordered",
+      "receivedAt": "",
+      "notes": "",
+      "sku": "BAT-AA4",
+      "location": "Supply Drawer",
+      "itemId": "EQ-009"
+    },
+    {
+      "id": "PO-004",
+      "name": "First Aid Kit",
+      "category": "Medical & Safety",
+      "quantity": 4,
+      "source": "Supply Vendor",
+      "eta": "2026-10-25",
+      "status": "Received",
+      "receivedAt": "2026-10-26",
+      "notes": "",
+      "sku": "MED-KIT",
+      "location": "Cabinet C",
+      "itemId": "EQ-007"
+    }
+  ],
+  "activity": [
+    {
+      "id": "A-100",
+      "at": "2026-10-28T02:29:55.399Z",
+      "actor": "Demo Admin",
+      "action": "checkout",
+      "entity": "Loan",
+      "entityId": "LN-001",
+      "details": "Issued 2 Handheld Radio · R-104 to Miller"
+    },
+    {
+      "id": "A-101",
+      "at": "2026-10-28T02:29:55.399Z",
+      "actor": "Demo Admin",
+      "action": "checkout",
+      "entity": "Loan",
+      "entityId": "LN-002",
+      "details": "Issued 3 Ground Team Pack to Reed"
+    },
+    {
+      "id": "A-102",
+      "at": "2026-10-28T02:29:55.399Z",
+      "actor": "Demo Admin",
+      "action": "order",
+      "entity": "Order",
+      "entityId": "PO-001",
+      "details": "Created order: Safety Vests ×12"
+    },
+    {
+      "id": "A-103",
+      "at": "2026-10-28T02:29:55.399Z",
+      "actor": "Demo Admin",
+      "action": "return",
+      "entity": "Loan",
+      "entityId": "LN-006",
+      "details": "Received First Aid Kit ×1 from Hayes"
+    }
+  ],
+  "users": [
+    {
+      "email": "demo-admin@example.invalid",
+      "displayName": "Demo Administrator",
+      "role": "admin",
+      "active": "TRUE"
+    },
+    {
+      "email": "demo-logistics@example.invalid",
+      "displayName": "Logistics Officer",
+      "role": "logistics",
+      "active": "TRUE"
+    },
+    {
+      "email": "demo-cadre@example.invalid",
+      "displayName": "Cadet Cadre",
+      "role": "viewer",
+      "active": "TRUE"
+    }
+  ]
+}
