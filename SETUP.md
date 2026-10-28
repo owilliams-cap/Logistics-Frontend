@@ -1,6 +1,6 @@
 # Squadron Logistics POC — Google Login and Google Sheets setup
 
-This build includes: login-first UI; eight designs (Headquarters, Command, Fieldbook, Studio, Warehouse, Dispatch, Atlas, Terminal); inventory / checkout / returns / incoming supplies / grade-insignia UI; fictional local demo; and an **opt-in Google-authenticated Sheets pilot**.
+This build includes: login-first UI; ten designs (Headquarters, Command, Fieldbook, Studio, Warehouse, Dispatch, Atlas, Terminal); inventory / checkout / returns / incoming supplies / grade-insignia UI; fictional local demo; and an **opt-in Google-authenticated Sheets pilot**.
 
 ## Status
 
@@ -61,3 +61,10 @@ The Drive connector can create and populate the Sheet but does not provision OAu
 - **Email not authorized**: add the verified email to the `Users` tab as `active=TRUE`.
 - **Sheet column mismatch**: `Loans` must end in `grade`, the 11th column. The other tabs retain their documented headers.
 - **Sign-in needs to be repeated**: access tokens expire. Use the sign-out button and sign in again.
+
+## V5 issuance types / database migration
+1. In the business Google Sheet `Loans` tab, add column **L** with the header `issueType`. Values: `temporary`, `permanent`, `unknown`. The fictional POC Sheet has already been updated.
+2. Historical blank values are read as `temporary` only if a `dueAt` date exists; otherwise as `unknown`. Do not assume due dates for existing rows.
+3. `temporary` reserves the item until return, optionally with a due date; `unknown` reserves it but does not have a due date.
+4. `permanent` reduces `Items.total` at issuance, and cannot be marked returned. Record a later recovered item as an authorized stock adjustment.
+5. This direct browser-to-Sheets pilot still has **non-atomic cross-tab updates**. A permanent issue may update stock before the issue record is appended if a later request fails. This is a blocker for use with real records. Use an approved transactional server-side backend instead.
