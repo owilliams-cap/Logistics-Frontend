@@ -79,7 +79,7 @@ const seed={
  ].map(v=>Object.fromEntries(['id','at','actor','action','entity','entityId','details'].map((k,i)=>[k,v[i]]))),
  users:[{email:'demo-admin@example.invalid',displayName:'Demo Administrator',role:'admin',active:'TRUE'},{email:'demo-logistics@example.invalid',displayName:'Logistics Officer',role:'logistics',active:'TRUE'},{email:'demo-cadre@example.invalid',displayName:'Cadet Cadre',role:'viewer',active:'TRUE'}]
 };
-const persistKey='squadron-logistics-demo-v3';
+const persistKey='squadron-logistics-demo-v4';
 const storedDemoRole=(()=>{try{return localStorage.getItem('squadron-demo-role')}catch{return null}})();
 function initDemo(){try{const v=JSON.parse(localStorage.getItem(persistKey)||'null');if(v?.items?.length||v?.items?.length===0)return v;}catch{}return structuredClone(seed)}
 let demo=initDemo(), state={view:'dashboard',data:null,filter:'All',search:'',modal:null,role:storedDemoRole||'admin',mobile:false,loading:false};
