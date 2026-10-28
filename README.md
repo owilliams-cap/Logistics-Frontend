@@ -1,6 +1,6 @@
 # Squadron Logistics · Full Frontend Proof of Concept
 
-A responsive logistics dashboard for a fictional squadron: equipment inventory, issue/return history, incoming shipments, rank insignia stock and optional member grade labels. Four selectable user-interface styles: **Original, Midnight, Forest, Arctic**.
+A responsive logistics dashboard for a fictional squadron: equipment inventory, issue/return history, incoming shipments, rank insignia stock and optional member grade labels. Four **different interface layouts**: **Original** (classic sidebar), **Command** (mission-control navigation and telemetry), **Fieldbook** (slim icon rail and paper ledger), **Studio** (horizontal navigation with a contextual right panel).
 
 **DEMO / PILOT ONLY — NOT APPROVED FOR REAL CIVIL AIR PATROL RECORDS.**
 
@@ -27,10 +27,10 @@ HTML/CSS/JS. Google Identity Services, Google Sheets REST API. No paid services 
 - Incoming orders, transit, receiving into stock.
 - Grade & Insignia catalog (fictional stock, decorative stripe motifs, grade label reference).
 - Administrator/logistics/read-only role *preview*, Google-based identity in Sheets pilot, logout.
-- Four interface themes, selectable at login and in settings, remembered locally.
+- Four fully different visual architectures, selectable at login and in settings, remembered locally.\n- CAP command emblem shown via a Wikimedia Commons copy of CAP-provided artwork; the public design does not imply CAP endorsement or site approval.
 
 ## Important security distinctions
 
 Google OAuth authenticates the person; Google Sheets file sharing authorizes access to the whole Sheet. Browser-side `Users` role checks are **not sufficient** for restricting authorized Sheet editors to specific actions. Do not grant Editor permissions to staff who must not edit the underlying database. Access tokens remain in memory only. The Google Sheet in this POC contains fictional inventory and illustrative usernames; do not add real CAP data until formal review and appropriate server-side permissions and cloud residency protections.
 
-Official CAP property accountability systems remain authoritative.
+## Security review\n\nRead [SECURITY.md](./SECURITY.md) before sharing the prototype. Browser demo access is not authentication; direct Google Sheets access does **not** provide secure per-role permissions. Do not use real CAP data or rely on this for property accountability. The HTML has a restrictive script/CSP policy as defense-in-depth, not a substitute for an approved backend.\n\nOfficial CAP property accountability systems remain authoritative.
