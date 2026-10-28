@@ -59,3 +59,5 @@ Sources:
 
 ## V5 issue accounting safeguards
 Issuance modes are explicit and only a temporary item with a real due date can be marked overdue. Permanent giveaways reduce stock on hand and become immutable issuance records in the demo; unknown-duration items stay assigned without an estimated return. **This does not solve** the underlying multi-request, non-atomic Google Sheets API behavior or permit official CAP property transactions.
+## V6 security boundary
+The new theme selector, dark mode, and tablet controls are presentation changes only. Issued-to-keep and used/consumed operations decrease the Sheet's on-hand stock before appending an issue event in the browser pilot. These separate API calls are not atomic, so this version is for fictional data only. A production system requires server-side verified identity and permissions, transaction locking, recovery/idempotency, controlled audit logs, and CAP review. Do not implement custom username/password authentication in public JavaScript.
