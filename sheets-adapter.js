@@ -11,8 +11,8 @@
     Activity: ['id','at','actor','action','entity','entityId','details'],
     Users: ['email','displayName','role','active']
   };
-  const issueType=l=>['temporary','permanent','unknown'].includes(l?.issueType)?l.issueType:(l?.dueAt?'temporary':'unknown');
-  const reserves=l=>!l.returnedAt&&issueType(l)!=='permanent';
+  const issueType=l=>['temporary','permanent','consumed','unknown'].includes(l?.issueType)?l.issueType:(l?.dueAt?'temporary':'unknown');
+  const reserves=l=>!l.returnedAt&&!['permanent','consumed'].includes(issueType(l));
   const roles={admin:['read','checkout','return','write','order','receive','users'],logistics:['read','checkout','return','write','order','receive'],viewer:['read']};
   const states={active:false,token:null,person:null,me:null,client:null};
   let initialPromise;
@@ -102,14 +102,14 @@
       permit('checkout');if(!item)throw Error('Item not found.');const qty=integer(p.quantity,'Quantity');
       const taken=d.Loans.filter(l=>l.itemId===item.id&&reserves(l)).reduce((a,b)=>a+Number(b.quantity),0);
       if(qty>Number(item.total)-taken)throw Error('Not enough available stock.');
-      const member=text(p.member),grade=text(p.grade,32),type=['temporary','permanent','unknown'].includes(p.issueType)?p.issueType:'unknown';
-      if(!member)throw Error('Member last name is required.');const due=type==='temporary'?text(p.dueAt,10):'';
+      const member=text(p.member),grade=text(p.grade,32),type=['temporary','permanent','consumed','unknown'].includes(p.issueType)?p.issueType:'unknown';
+      if(!member&&type!=='consumed')throw Error('Member last name is required unless the item is consumed.');const due=type==='temporary'?text(p.dueAt,10):'';
       if(due&&!/^\d{4}-\d{2}-\d{2}$/.test(due))throw Error('Invalid due date.');
       const x={id:uid('LN'),itemId:item.id,member,grade,issueType:type,quantity:qty,checkedOutAt:toDate(),dueAt:due,returnedAt:'',issuedBy:states.person.email,returnedBy:'',note:text(p.notes||p.note,400)};
-      if(type==='permanent'){item.total=Number(item.total)-qty;await replace('Items',item._row,item);}
+      if(type==='permanent'||type==='consumed'){item.total=Number(item.total)-qty;await replace('Items',item._row,item);}
       await append('Loans',x);await audit('checkout','Loan',x.id,type+' issue: '+item.name+' ×'+qty+' to '+(grade?grade+' ':'')+member);
     }else if(action==='returnLoan'){
-      permit('return');const l=d.Loans.find(x=>x.id===p.id&&!x.returnedAt);if(!l)throw Error('Loan already returned or missing.');if(issueType(l)==='permanent')throw Error('Permanent issues cannot be returned; use an inventory adjustment for recovered stock.');l.returnedAt=toDate();l.returnedBy=states.person.email;await replace('Loans',l._row,l);await audit('return','Loan',l.id,'Returned '+l.quantity+' units from '+l.member);
+      permit('return');const l=d.Loans.find(x=>x.id===p.id&&!x.returnedAt);if(!l)throw Error('Loan already returned or missing.');if(['permanent','consumed'].includes(issueType(l)))throw Error('Issued-to-keep and consumed items cannot be returned as loans.');l.returnedAt=toDate();l.returnedBy=states.person.email;await replace('Loans',l._row,l);await audit('return','Loan',l.id,'Returned '+l.quantity+' units from '+l.member);
     }else if(action==='createOrder'){
       permit('order');const x={id:uid('PO'),name:text(p.name),category:text(p.category),quantity:integer(p.quantity,'Quantity'),source:text(p.source,120),eta:text(p.eta,10),status:'Ordered',receivedAt:'',notes:text(p.notes,400),sku:text(p.sku,80),location:text(p.location,100),itemId:text(p.itemId,80)};
       if(!x.name||!x.category)throw Error('Name and category are required.');await append('Orders',x);await audit('order','Order',x.id,'Ordered '+x.name+' ×'+x.quantity);
