@@ -56,3 +56,6 @@ Sources:
 - CAP Public Affairs resources and Brand Portal: https://www.gocivilairpatrol.com/members/cap-national-hq/public-affairs-about/public-affairs
 - CAP emblem origin and license notice: https://commons.wikimedia.org/wiki/File:Civil_Air_Patrol_US.svg
 - Google Identity Services CSP: https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid
+
+## V5 issue accounting safeguards
+Issuance modes are explicit and only a temporary item with a real due date can be marked overdue. Permanent giveaways reduce stock on hand and become immutable issuance records in the demo; unknown-duration items stay assigned without an estimated return. **This does not solve** the underlying multi-request, non-atomic Google Sheets API behavior or permit official CAP property transactions.
