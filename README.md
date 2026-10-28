@@ -1,36 +1,54 @@
-# Squadron Logistics · Full Frontend Proof of Concept
+# Squadron Logistics — Eight UI Concepts (V4)
 
-A responsive logistics dashboard for a fictional squadron: equipment inventory, issue/return history, incoming shipments, rank insignia stock and optional member grade labels. Four **different interface layouts**: **Original** (classic sidebar), **Command** (mission-control navigation and telemetry), **Fieldbook** (slim icon rail and paper ledger), **Studio** (horizontal navigation with a contextual right panel).
+A design exploration of **eight genuinely different interfaces** for a squadron logistics and stock-tracking tool. Shared inventory functions sit beneath eight distinct navigation systems, category views, dashboard structures, and action patterns.
 
-**DEMO / PILOT ONLY — NOT APPROVED FOR REAL CIVIL AIR PATROL RECORDS.**
+**FICTIONAL-DATA PROOF OF CONCEPT ONLY. NOT AN APPROVED CAP SYSTEM.**
 
-## Run
+## Open and try
 
-Open the GitHub Pages site and use the landing screen:
+- GitHub Pages: https://owilliams-cap.github.io/Logistics-Frontend/
+- Start with **Enter demo workspace** to try everything locally, including adding inventory and creating and returning checkouts.
+- The login screen and **Settings → Appearance** let you switch designs without resetting data.
+- **Continue with Google** is a separate Sheets pilot. The public OAuth ID is configured, but real sign-in, API enablement, account approval, and a successful live write must be verified.
 
-- **Enter demo workspace**: complete fictional-data UI with local-only browser storage. No authentication.
-- **Continue with Google**: Google OAuth + private Google Sheet API. Must first configure OAuth client ID, share the private Sheet with the account, and list the email in the `Users` tab. This mode is a **fictional-data integration pilot** only; role checks are not server enforced.
+## The eight visual directions
 
-## Deployment
+| Concept | Navigation | Dashboard | Inventory experience |
+| --- | --- | --- | --- |
+| Headquarters | Classic administrative sidebar | Service-desk modules and handoff log | Clean inventory data grid |
+| Command | Full-width mission-control navigation | Readiness radar, telemetry, exception console | Compact monitoring list |
+| Fieldbook | Narrow field-officer tool rail | Paper logbook and two-column ledger | Ruled supply-register rows |
+| Studio | Horizontal product navigation and right insights rail | Editorial collection workspace | Gallery of item cards |
+| Warehouse | Dual-level stockroom buttons plus aisle index | Industrial scan bay and bin/zone lookup | Rack cards with prominent quantities |
+| Dispatch | Floating bottom task dock | Ready / issued / receiving Kanban lanes | Pick-and-handoff cards |
+| Atlas | Persistent right-side spatial navigation | Visual department atlas and category tiles | Collection catalog cards |
+| Terminal | Numbered command rail + typed command prompt | Text console, diagnostics and command directory | Monospaced stock record console |
 
-Publish `main` branch root through GitHub Pages. See [SETUP.md](./SETUP.md) for OAuth/Sheet setup and security limitations. Do not store tokens or secrets in repo. GitHub Pages serves a public frontend; it is not a private member login portal.
+The Terminal prompt supports a fixed navigation command list, e.g. `inventory`, `checkout`, `orders`, `grade`, `log`, `settings`, and `help`. It does **not** evaluate arbitrary input.
 
-## Technology
+## Shared workflows
 
-HTML/CSS/JS. Google Identity Services, Google Sheets REST API. No paid services needed for current scale. Backend sample included in the downloadable release under `apps-script` but requires a separate Google Apps Script deployment and CAP IT security review before operational use.
+Inventory, categories and stock thresholds; checkouts and returns; incoming orders and receiving; grade and insignia inventory; activity list; CSV export; demo roles; mobile navigation and mobile sign-out.
 
-## Features
+All eight render the same records, so visual switching does not modify transactions or data. Category selection and task controls are functional.
 
-- Responsive operational dashboard, KPIs, overdue alerts and supply distribution.
-- Inventory creation/edit, categories, stock, SKUs, low-stock thresholds and CSV export.
-- Member checkouts with optional CAP grade, return history, and activity audit list.
-- Incoming orders, transit, receiving into stock.
-- Grade & Insignia catalog (fictional stock, decorative stripe motifs, grade label reference).
-- Administrator/logistics/read-only role *preview*, Google-based identity in Sheets pilot, logout.
-- Four fully different visual architectures, selectable at login and in settings, remembered locally.\n- CAP command emblem shown via a Wikimedia Commons copy of CAP-provided artwork; the public design does not imply CAP endorsement or site approval.
+## Repository files
 
-## Important security distinctions
+- `index.html` — public entry, CSP and asset loading
+- `app.js` — application state, events, all eight dashboards, data workflows
+- `styles.css` — shared baseline components
+- `themes.css` — existing theme/login foundations
+- `design-systems.css` — earlier four architecture layouts
+- `concepts-v4.css` — new architectures, redesigned inventory and login styles, and accessibility/mobile refinements
+- `sheets-adapter.js` / `config.js` — fictional-data Google Sheets pilot
+- `SETUP.md` / `SECURITY.md` — integration guidance and limitations
 
-Google OAuth authenticates the person; Google Sheets file sharing authorizes access to the whole Sheet. Browser-side `Users` role checks are **not sufficient** for restricting authorized Sheet editors to specific actions. Do not grant Editor permissions to staff who must not edit the underlying database. Access tokens remain in memory only. The Google Sheet in this POC contains fictional inventory and illustrative usernames; do not add real CAP data until formal review and appropriate server-side permissions and cloud residency protections.
+## Security boundaries
 
-## Security review\n\nRead [SECURITY.md](./SECURITY.md) before sharing the prototype. Browser demo access is not authentication; direct Google Sheets access does **not** provide secure per-role permissions. Do not use real CAP data or rely on this for property accountability. The HTML has a restrictive script/CSP policy as defense-in-depth, not a substitute for an approved backend.\n\nOfficial CAP property accountability systems remain authoritative.
+The public site and all its source are readable by anyone. **Demo login is not authentication**. Demo data lives in browser local storage; do not enter real member or equipment information.
+
+The direct Sheets browser pilot uses Google's OAuth access and Google file permissions. App-side roles do not restrict someone with direct Google Sheet Editor access; transactions are not atomic and audit rows are editable. Thus **it is not suitable for real CAP custodial records**.
+
+The OAuth Client ID is public configuration, not a secret. Do not commit a client secret, private key, token, or actual CAP records. Read [SECURITY.md](./SECURITY.md) before any deployment beyond fictional demonstration. Rotate the previously exposed Google Cloud client secret.
+
+CAP property accountability systems remain authoritative. Any real operational system requires CAP approval, authorization, U.S. data residency verification, backups and independent security testing.
