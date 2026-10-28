@@ -1,27 +1,36 @@
-# Squadron Logistics — frontend demonstration
+# Squadron Logistics · Full Frontend Proof of Concept
 
-A polished responsive proof of concept for squadron inventory and equipment issue management.
+A responsive logistics dashboard for a fictional squadron: equipment inventory, issue/return history, incoming shipments, rank insignia stock and optional member grade labels. Four selectable user-interface styles: **Original, Midnight, Forest, Arctic**.
 
-**PUBLIC DEMO ONLY — NOT AN AUTHENTICATED CAP SYSTEM.** All bundled information is fictional. Do not use this GitHub Pages application to record actual member identities, equipment assignments, storage locations, or other CAP data.
+**DEMO / PILOT ONLY — NOT APPROVED FOR REAL CIVIL AIR PATROL RECORDS.**
 
-## Try the demo
-The frontend is `index.html`, `styles.css`, and `app.js`. GitHub Pages can publish these files from the root of the `main` branch.
+## Run
 
-- Inventory overview with category distribution, search, filters, and low-stock alerts.
-- Add or edit equipment; manage quantities, locations, categories, and reorder points.
-- Check out and return equipment with stock accounting.
-- Track incoming orders and receive inventory.
-- View simulated audit events and export CSV.
-- Demonstrate administrator, logistics, and read-only views under Settings.
-- Works on mobile and desktop.
+Open the GitHub Pages site and use the landing screen:
 
-### Data storage
-This demo runs entirely in the visitor's browser using `localStorage`, with fictional seed records. There are **no server accounts, login protection, Google Sheets connections, or API keys** in this repository. Reset the demo in Settings. Data entered into the demo does not synchronize between browsers and remains in that browser's local storage.
+- **Enter demo workspace**: complete fictional-data UI with local-only browser storage. No authentication.
+- **Continue with Google**: Google OAuth + private Google Sheet API. Must first configure OAuth client ID, share the private Sheet with the account, and list the email in the `Users` tab. This mode is a **fictional-data integration pilot** only; role checks are not server enforced.
 
-### Backend / operational use
-The separate Google Sheets proof-of-concept data belongs to the project owner and is **not connected** to this public frontend. The proposed Apps Script backend requires reliable user authentication, server-side permission checks, secure hosting/data residency review, CAP command/IT approval, and documented backups before any real information is used. Do not paste Google credentials, Apps Script privileged tokens, service-account keys, or member information into this repo. Do not assume a browser login screen provides security.
+## Deployment
 
-### GitHub Pages
-Open repository **Settings → Pages → Build and deployment → Deploy from a branch**, then select `main` and `/(root)`. GitHub will report the deployed URL after publication.
+Publish `main` branch root through GitHub Pages. See [SETUP.md](./SETUP.md) for OAuth/Sheet setup and security limitations. Do not store tokens or secrets in repo. GitHub Pages serves a public frontend; it is not a private member login portal.
 
-For CAP-accountable property, the applicable official systems and forms remain authoritative.
+## Technology
+
+HTML/CSS/JS. Google Identity Services, Google Sheets REST API. No paid services needed for current scale. Backend sample available in `apps-script` but requires a separate Google Apps Script deployment and CAP IT security review before operational use.
+
+## Features
+
+- Responsive operational dashboard, KPIs, overdue alerts and supply distribution.
+- Inventory creation/edit, categories, stock, SKUs, low-stock thresholds and CSV export.
+- Member checkouts with optional CAP grade, return history, and activity audit list.
+- Incoming orders, transit, receiving into stock.
+- Grade & Insignia catalog (fictional stock, decorative stripe motifs, grade label reference).
+- Administrator/logistics/read-only role *preview*, Google-based identity in Sheets pilot, logout.
+- Four interface themes, selectable at login and in settings, remembered locally.
+
+## Important security distinctions
+
+Google OAuth authenticates the person; Google Sheets file sharing authorizes access to the whole Sheet. Browser-side `Users` role checks are **not sufficient** for restricting authorized Sheet editors to specific actions. Do not grant Editor permissions to staff who must not edit the underlying database. Access tokens remain in memory only. The Google Sheet in this POC contains fictional inventory and illustrative usernames; do not add real CAP data until formal review and appropriate server-side permissions and cloud residency protections.
+
+Official CAP property accountability systems remain authoritative.

@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="theme-color" content="#101c31" />
-  <meta name="description" content="Squadron Logistics — fictional-data inventory management proof of concept." />
-  <title>Squadron Logistics | Operations Demo</title>
+  <meta name="description" content="Squadron Logistics: fictional-data inventory and equipment issue management proof of concept." />
+  <title>Squadron Logistics · Operations</title>
   <link rel="stylesheet" href="./styles.css" />
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./themes.css" />
 </head>
 <body>
   <div id="app"></div>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="./config.js"></script>
+  <script src="./sheets-adapter.js"></script>
+  <script>window.LOGISTICS_MODE = 'demo';</script>
+  <script src="./app.js" defer></script>
 </body>
 </html>
