@@ -47,8 +47,8 @@ function identity_(){
 }
 function authorize_(user,perm){if(!PERMS[user.role].includes(perm))throw new Error('You do not have permission to perform this action.');}
 function log_(user,action,entity,entityId,details){append_('Activity',{id:id_('A'),at:now_(),actor:user.displayName||user.email,action,entity,entityId,details});}
-function issueType_(l){return ['temporary','permanent','unknown'].indexOf(l.issueType)>-1?l.issueType:(l.dueAt?'temporary':'unknown');}
-function reserves_(l){return !l.returnedAt&&issueType_(l)!=='permanent';}
+function issueType_(l){return ['temporary','permanent','consumed','unknown'].indexOf(l.issueType)>-1?l.issueType:(l.dueAt?'temporary':'unknown');}
+function reserves_(l){return !l.returnedAt&&['permanent','consumed'].indexOf(issueType_(l))===-1;}
 function inventory_(){const items=rowData_('Items'),loans=rowData_('Loans');return items.map(i=>({...strip_(i),available:Number(i.total)-loans.filter(l=>l.itemId===i.id&&reserves_(l)).reduce((n,l)=>n+Number(l.quantity),0)}));}
 function bootstrap_(user){
   authorize_(user,'read');
@@ -66,13 +66,13 @@ function mutate_(action,p,user){
   }else if(action==='checkout'){
    authorize_(user,'checkout');const i=items.find(x=>x.id===p.itemId);if(!i)throw new Error('Item not found.');
    const qty=amount_(p.quantity,'Issue quantity'),allocated=loans.filter(l=>l.itemId===i.id&&reserves_(l)).reduce((n,l)=>n+Number(l.quantity),0),avail=Number(i.total)-allocated;
-   if(qty>avail)throw new Error('Only '+avail+' available.');const member=required_(p.member,'Member last name');
-   const type=['temporary','permanent','unknown'].indexOf(p.issueType)>-1?p.issueType:'unknown',due=type==='temporary'?date_(p.dueAt):'';
-   const id=id_('LN');if(type==='permanent'){i.total=Number(i.total)-qty;replace_('Items',i);}
+   if(qty>avail)throw new Error('Only '+avail+' available.');const member=p.issueType==='consumed'?optional_(p.member,140):required_(p.member,'Member last name');
+   const type=['temporary','permanent','consumed','unknown'].indexOf(p.issueType)>-1?p.issueType:'unknown',due=type==='temporary'?date_(p.dueAt):'';
+   const id=id_('LN');if(type==='permanent'||type==='consumed'){i.total=Number(i.total)-qty;replace_('Items',i);}
    append_('Loans',{id,itemId:i.id,member,quantity:qty,checkedOutAt:today_(),dueAt:due,returnedAt:'',issuedBy:user.displayName||user.email,returnedBy:'',note:optional_(p.notes||p.note),grade:optional_(p.grade,32),issueType:type});
    log_(user,'checkout','Loan',id,type+' issue: '+i.name+' x'+qty+' to '+member);
   }else if(action==='returnLoan'){
-   authorize_(user,'return');const l=loans.find(x=>x.id===p.id);if(!l||l.returnedAt)throw new Error('Checkout not active.');if(issueType_(l)==='permanent')throw new Error('Permanent issues require stock adjustment, not a return.');l.returnedAt=today_();l.returnedBy=user.displayName||user.email;replace_('Loans',l);const i=items.find(x=>x.id===l.itemId);log_(user,'return','Loan',l.id,'Returned '+(i?.name||l.itemId)+' x'+l.quantity+' from '+l.member);
+   authorize_(user,'return');const l=loans.find(x=>x.id===p.id);if(!l||l.returnedAt)throw new Error('Checkout not active.');if(['permanent','consumed'].indexOf(issueType_(l))>-1)throw new Error('Issued-to-keep and consumed items are not returnable as loans.');l.returnedAt=today_();l.returnedBy=user.displayName||user.email;replace_('Loans',l);const i=items.find(x=>x.id===l.itemId);log_(user,'return','Loan',l.id,'Returned '+(i?.name||l.itemId)+' x'+l.quantity+' from '+l.member);
   }else if(action==='createOrder'){
    authorize_(user,'order');const id=id_('PO');const o={id,name:required_(p.name,'Item description'),category:required_(p.category,'Category'),quantity:amount_(p.quantity,'Quantity'),source:optional_(p.source,120),eta:date_(p.eta),status:'Ordered',receivedAt:'',notes:optional_(p.notes),sku:optional_(p.sku,80),location:optional_(p.location,100),itemId:optional_(p.itemId,60)};append_('Orders',o);log_(user,'order','Order',id,'Ordered '+o.name+' x'+o.quantity);
   }else if(action==='markInTransit'){
