@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-ancestors 'none'; script-src 'self' https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; img-src 'self' https://upload.wikimedia.org data:; connect-src 'self' https://accounts.google.com/gsi/ https://sheets.googleapis.com https://www.googleapis.com; frame-src https://accounts.google.com/gsi/; upgrade-insecure-requests" />
   <meta name="theme-color" content="#101c31" />
   <meta name="description" content="Squadron Logistics: fictional-data inventory and equipment issue management proof of concept." />
   <title>Squadron Logistics · Operations</title>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./themes.css" />
+  <link rel="stylesheet" href="./design-systems.css" />
 </head>
 <body>
   <div id="app"></div>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="./config.js"></script>
   <script src="./sheets-adapter.js"></script>
-  <script>window.LOGISTICS_MODE = 'demo';</script>
   <script src="./app.js" defer></script>
 </body>
 </html>
