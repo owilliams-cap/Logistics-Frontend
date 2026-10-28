@@ -17,7 +17,7 @@ Publish `main` branch root through GitHub Pages. See [SETUP.md](./SETUP.md) for 
 
 ## Technology
 
-HTML/CSS/JS. Google Identity Services, Google Sheets REST API. No paid services needed for current scale. Backend sample available in `apps-script` but requires a separate Google Apps Script deployment and CAP IT security review before operational use.
+HTML/CSS/JS. Google Identity Services, Google Sheets REST API. No paid services needed for current scale. Backend sample included in the downloadable release under `apps-script` but requires a separate Google Apps Script deployment and CAP IT security review before operational use.
 
 ## Features
 
