@@ -1,6 +1,6 @@
 # Squadron Logistics POC — Google Login and Google Sheets setup
 
-This build includes: login-first UI; four designs (Original, Midnight, Forest, Arctic); inventory / checkout / returns / incoming supplies / grade-insignia UI; fictional local demo; and an **opt-in Google-authenticated Sheets pilot**.
+This build includes: login-first UI; eight designs (Headquarters, Command, Fieldbook, Studio, Warehouse, Dispatch, Atlas, Terminal); inventory / checkout / returns / incoming supplies / grade-insignia UI; fictional local demo; and an **opt-in Google-authenticated Sheets pilot**.
 
 ## Status
 
@@ -46,7 +46,7 @@ The Drive connector can create and populate the Sheet but does not provision OAu
 
 - `index.html` — login-first page.
 - `styles.css` — original baseline design.
-- `themes.css` — four design variants and login UI.
+- `themes.css` — eight design variants and login UI.
 - `app.js` — UI, fictional demo mode and data handling.
 - `sheets-adapter.js` — Google OAuth token and Google Sheets API pilot adapter.
 - `config.js` — public OAuth client ID and Sheet ID only.
