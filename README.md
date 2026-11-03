@@ -1,6 +1,6 @@
 # Squadron Logistics | Supply Flow Tablet Edition (V6)
 
-A responsive fictional-data logistics proof of concept with **ten fundamentally different layout systems**, not merely color themes.
+A responsive fictional-data logistics proof of concept with **eleven fundamentally different layout systems**, not merely color themes.
 
 | ID | Experience | Design approach |
 | --- | --- | --- |
@@ -14,6 +14,7 @@ A responsive fictional-data logistics proof of concept with **ten fundamentally 
 | terminal | Registry | Structured data console with optional command navigation |
 | director | Director | Executive briefing folio with appendix registers |
 | supplychain | Supply Flow | Workflow-first stock, issue, receive, review interface |
+| commandflow | Command Flow | Restrained navy operations interface built around practical issue/receive workflows |
 
 ## Core workflows
 - Catalog equipment, view available stock, edit records and export CSV.
@@ -41,3 +42,13 @@ The business Google demo Sheet includes `Items`, `Loans`, `Orders`, `Activity`, 
 - Light/dark toggle is available for Supply Flow and remembered in the browser.
 - Tablet and phone layouts feature a five-action fixed navigation dock, large touch controls, and responsive issue forms.
 - Browser-to-Sheets pilot still requires Google sign-in; a separate identity service and protected backend will be needed to support usernames/passwords or non-Google accounts securely.
+
+
+## V7: Command Flow and the dedicated Insignia Desk
+
+- **Command Flow** is an optional eleventh layout blending Command's elegant navy/slate styling with Supply Flow's practical operations structure. Supply Flow remains the default.
+- **Insignia Desk** uses a grade-first catalog separate from stock inventory. The directory includes 30 grade/reference entries across cadet grades, senior officer grades, senior NCO grades, and flight officers. C/AB and ungraded SM have no associated grade insignia. Individual insignia materials/variants require separate inventory records.
+- Only existing physically inventoried insignia show a quantity and an **Issue** button; unstocked grade entries show **Not stocked** and can open a prefilled stock registration form.
+- **Issue from item** now selects that precise item instead of erroneously defaulting to the first inventory item (for example a radio). The Insignia Desk uses a pinned, preselected issue item and defaults to **Issued to keep**, with recipient grade prefilled when recognized.
+- Physical insignia labels in this prototype are administrative references, not CAP-authorized rank artwork or a complete uniform insignia ordering catalog.
+- These updates do not change authentication limitations: browser Google Sheets editors may still bypass interface role gating. Do not use real CAP member or inventory records.
