@@ -52,3 +52,12 @@ The business Google demo Sheet includes `Items`, `Loans`, `Orders`, `Activity`, 
 - **Issue from item** now selects that precise item instead of erroneously defaulting to the first inventory item (for example a radio). The Insignia Desk uses a pinned, preselected issue item and defaults to **Issued to keep**, with recipient grade prefilled when recognized.
 - Physical insignia labels in this prototype are administrative references, not CAP-authorized rank artwork or a complete uniform insignia ordering catalog.
 - These updates do not change authentication limitations: browser Google Sheets editors may still bypass interface role gating. Do not use real CAP member or inventory records.
+
+## V8: Insignia Shelf + Command Flow dark mode
+
+- **Command Flow** is now the default design for new browsers and opens in dark mode. Appearance preferences are kept separately for each supported design.
+- The selected **Insignia Shelf** design replaces Command Flow's long grade list with five grade categories, a compact grid or list view, a text search, and stock-status filters.
+- Issue actions are tied to the exact physical inventory item clicked. Missing stock can be registered, but cannot be issued.
+- Tablet and mobile screens have an Insignia shortcut in the lower navigation and touch-friendly controls.
+- Insignia icons are generic placeholder graphics. The grade directory is not an official CAP insignia/placement guide.
+- This remains a fictional-data demonstration. OAuth-enabled direct Sheets editing is not production-grade per-action authorization; do not store real CAP personnel or restricted inventory data here.
