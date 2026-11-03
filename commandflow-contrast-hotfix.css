@@ -1,0 +1,86 @@
+/* Command Flow dark-mode readability patch, 2026-11-03.
+   Scoped to Command Flow DARK only. No workflow or light-mode behavior changes. */
+[data-appearance="dark"] .design-commandflow {
+  --cf-bg:#111b2b; --cf-surface:#1d3047; --cf-border:#3a526e;
+  color:#eef4ff;
+}
+[data-appearance="dark"] .design-commandflow .content,
+[data-appearance="dark"] .design-commandflow .page-lead,
+[data-appearance="dark"] .design-commandflow .supply-stock,
+[data-appearance="dark"] .design-commandflow .supply-orders {color:#eaf2ff}
+[data-appearance="dark"] .design-commandflow .page-lead h1,
+[data-appearance="dark"] .design-commandflow .supply-order-coltitle h2,
+[data-appearance="dark"] .design-commandflow .supply-heading h2,
+[data-appearance="dark"] .design-commandflow .supply-stack-desc h3,
+[data-appearance="dark"] .design-commandflow .supply-assignment-grid h3,
+[data-appearance="dark"] .design-commandflow .supply-order-columns article h3,
+[data-appearance="dark"] .design-commandflow .timeline-copy h4,
+[data-appearance="dark"] .design-commandflow .data-panel h2,
+[data-appearance="dark"] .design-commandflow .data-panel h3,
+[data-appearance="dark"] .design-commandflow .data-panel h4,
+[data-appearance="dark"] .design-commandflow .data-table,
+[data-appearance="dark"] .design-commandflow .info-card h3 {color:#f0f6ff!important}
+[data-appearance="dark"] .design-commandflow .page-lead p,
+[data-appearance="dark"] .design-commandflow .timeline-copy p,
+[data-appearance="dark"] .design-commandflow .timeline-copy small,
+[data-appearance="dark"] .design-commandflow .supply-stack-desc small,
+[data-appearance="dark"] .design-commandflow .supply-stack-amount small,
+[data-appearance="dark"] .design-commandflow .supply-order-columns article p,
+[data-appearance="dark"] .design-commandflow .supply-order-columns article small,
+[data-appearance="dark"] .design-commandflow .supply-order-columns article>div,
+[data-appearance="dark"] .design-commandflow .supply-assignment-grid p,
+[data-appearance="dark"] .design-commandflow .supply-order-coltitle>span {color:#bccde1!important}
+[data-appearance="dark"] .design-commandflow .eyebrow,
+[data-appearance="dark"] .design-commandflow .supply-stock-heading {color:#91bdf3!important}
+/* The receiving board previously inherited very pale green columns and white cards. */
+[data-appearance="dark"] .design-commandflow .supply-order-columns>section {
+  background:#182b40!important;border:1px solid #37516e;border-radius:11px;
+}
+[data-appearance="dark"] .design-commandflow .supply-order-columns article,
+[data-appearance="dark"] .design-commandflow .supply-assignment-grid article,
+[data-appearance="dark"] .design-commandflow .supply-stack-row,
+[data-appearance="dark"] .design-commandflow .data-panel,
+[data-appearance="dark"] .design-commandflow .info-card {
+  background:#20344c!important;border-color:#3c5673!important;color:#eef5ff!important;
+}
+[data-appearance="dark"] .design-commandflow .supply-order-columns article button,
+[data-appearance="dark"] .design-commandflow .supply-stack-actions button,
+[data-appearance="dark"] .design-commandflow .supply-assign-bottom button {
+  background:#2a5277!important;color:#eaf5ff!important;border:1px solid #52799f!important;
+}
+/* Category chips and stock search must follow the same dark palette. */
+[data-appearance="dark"] .design-commandflow .supply-category-grid>button,
+[data-appearance="dark"] .design-commandflow .supply-search {
+  background:#1e3148!important;color:#dbeaff!important;border-color:#415c77!important;
+}
+[data-appearance="dark"] .design-commandflow .supply-category-grid>button.selected {
+  background:#315d8e!important;color:#fff!important;border-color:#74a6dc!important;
+}
+[data-appearance="dark"] .design-commandflow .supply-search input,
+[data-appearance="dark"] .design-commandflow .supply-search input::placeholder {
+  color:#d8e6f7!important;
+}
+[data-appearance="dark"] .design-commandflow .supply-search input::placeholder {opacity:.78}
+/* Remove white icon tiles; place smaller icons directly on the card surface. */
+[data-appearance="dark"] .design-commandflow .supply-stack-icon,
+[data-appearance="dark"] .design-commandflow .timeline-icon,
+[data-appearance="dark"] .design-commandflow .cf-kpi>span,
+[data-appearance="dark"] .design-commandflow .cf-handoff>span,
+[data-appearance="dark"] .design-commandflow .cf-handoff-icon {
+  background:transparent!important;border:0!important;box-shadow:none!important;
+  color:#9ec7f6!important;
+}
+[data-appearance="dark"] .design-commandflow .supply-stack-icon {
+  width:28px;height:34px;justify-self:start;
+}
+[data-appearance="dark"] .design-commandflow .supply-stack-icon svg {width:19px;height:19px}
+[data-appearance="dark"] .design-commandflow .timeline-icon svg {width:18px;height:18px}
+[data-appearance="dark"] .design-commandflow .timeline-item {
+  border-color:#46617e!important;
+}
+[data-appearance="dark"] .design-commandflow .cf-kpi strong {color:#fff!important}
+[data-appearance="dark"] .design-commandflow .cf-kpi small {color:#c0d0e3!important}
+/* Preserve visible focus states for tablet/keyboard use. */
+[data-appearance="dark"] .design-commandflow :is(button,input,select):focus-visible {
+  outline:3px solid #8bbdfc;outline-offset:2px;
+}
