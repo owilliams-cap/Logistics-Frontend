@@ -1,0 +1,97 @@
+/* Command Flow: dark-default Insignia Shelf, professional stock catalog */
+.design-commandflow .insignia-shelf{--sh-bg:#fff;--sh-card:#fff;--sh-border:#dde6ee;--sh-text:#1d3651;--sh-muted:#71849a;--sh-blue:#285f98;--sh-soft:#ecf4ff;--sh-ink:#25527f;--sh-good:#11795c;--sh-good-bg:#e5f4ed;--sh-low:#966514;--sh-low-bg:#fff3d7;max-width:1520px;margin:auto;color:var(--sh-text)}
+[data-appearance="dark"] .design-commandflow .insignia-shelf{--sh-bg:#132338;--sh-card:#192d43;--sh-border:#34506b;--sh-text:#eef5ff;--sh-muted:#b0c1d3;--sh-blue:#a8cbf7;--sh-soft:#274566;--sh-ink:#d6e8ff;--sh-good:#8fe4bd;--sh-good-bg:#194239;--sh-low:#ffd09a;--sh-low-bg:#493821}
+.design-commandflow .insignia-shelf button{font:inherit;cursor:pointer}
+.design-commandflow .insignia-shelf button:focus-visible,.design-commandflow .insignia-shelf input:focus-visible{outline:3px solid #75abef;outline-offset:2px}
+.design-commandflow .shelf-header{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:23px}
+.design-commandflow .shelf-header h1{font-size:32px;letter-spacing:-1px;color:var(--sh-text);margin:5px 0 7px}
+.design-commandflow .shelf-header p{color:var(--sh-muted);font-size:12px;line-height:1.65;max-width:610px;margin:0}
+.design-commandflow .shelf-kicker{color:var(--sh-blue);font-size:10px;font-weight:830;letter-spacing:1.5px}
+.design-commandflow .shelf-search{flex:none;width:min(340px,100%);min-height:48px;border:1px solid var(--sh-border);background:var(--sh-card);color:var(--sh-muted);border-radius:10px;padding:0 14px;display:flex;gap:10px;align-items:center}
+.design-commandflow .shelf-search input{flex:1;width:100%;min-width:0;background:transparent!important;border:0!important;outline:none!important;box-shadow:none!important;color:var(--sh-text)!important;font-size:13px}
+.design-commandflow .shelf-search input::placeholder{color:var(--sh-muted)}
+.design-commandflow .shelf-workspace{display:grid;grid-template-columns:280px minmax(0,1fr);gap:15px;align-items:stretch}
+.design-commandflow .shelf-groups,.design-commandflow .shelf-catalog{min-width:0;padding:18px;background:var(--sh-bg);border:1px solid var(--sh-border);border-radius:13px}
+.design-commandflow .shelf-overline{display:flex;justify-content:space-between;gap:10px;color:var(--sh-text);font-size:10px;font-weight:820;letter-spacing:1.25px;margin-bottom:15px}
+.design-commandflow .shelf-overline span{color:var(--sh-muted);font-weight:550;letter-spacing:0}
+.design-commandflow .shelf-groups-nav{display:grid;gap:8px}
+.design-commandflow .shelf-group{display:flex;align-items:center;gap:9px;min-height:76px;text-align:left;width:100%;border:1px solid var(--sh-border);background:var(--sh-card);color:var(--sh-text);border-radius:10px;padding:11px}
+.design-commandflow .shelf-group.selected{background:var(--sh-soft);border-color:var(--sh-blue)}
+.design-commandflow .shelf-group:hover{border-color:var(--sh-blue)}
+.design-commandflow .shelf-group-icon{display:grid;place-items:center;flex:none;width:34px;height:34px;color:var(--sh-blue);background:var(--sh-soft);border-radius:8px}
+.design-commandflow .shelf-group-body{flex:1;min-width:0}
+.design-commandflow .shelf-group-body strong{display:block;font-size:12px;line-height:1.25;color:var(--sh-text)}
+.design-commandflow .shelf-group-body small{display:block;font-size:10px;color:var(--sh-muted);margin-top:5px}
+.design-commandflow .shelf-group-count{font-size:10px;color:var(--sh-ink);font-weight:800;border-radius:20px;background:var(--sh-soft);padding:5px 7px;white-space:nowrap}
+.design-commandflow .shelf-group>svg{flex:none;color:var(--sh-muted)}
+.design-commandflow .shelf-note{border-top:1px solid var(--sh-border);margin-top:18px;padding-top:14px;display:flex;align-items:start;gap:8px;font-size:11px;color:var(--sh-muted);line-height:1.65}
+.design-commandflow .shelf-note svg{flex:none}
+.design-commandflow .shelf-catalog-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.design-commandflow .shelf-catalog-head h2{font-size:22px;letter-spacing:-.5px;margin:6px 0;color:var(--sh-text)}
+.design-commandflow .shelf-catalog-head small{font-size:11px;color:var(--sh-muted)}
+.design-commandflow .shelf-view-controls{display:flex;gap:2px;background:var(--sh-card);border:1px solid var(--sh-border);border-radius:9px;padding:4px}
+.design-commandflow .shelf-view-controls button{border:0;background:transparent;color:var(--sh-muted);display:grid;place-items:center;width:36px;height:36px;border-radius:7px}
+.design-commandflow .shelf-view-controls button.selected{background:var(--sh-soft);color:var(--sh-ink)}
+.design-commandflow .shelf-filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.design-commandflow .shelf-filters button{display:flex;align-items:center;gap:7px;min-height:39px;padding:8px 11px;border:1px solid var(--sh-border);border-radius:22px;background:var(--sh-card);color:var(--sh-muted);font-size:11px;font-weight:700}
+.design-commandflow .shelf-filters button.selected{background:var(--sh-soft);border-color:var(--sh-blue);color:var(--sh-ink)}
+.design-commandflow .shelf-filters button span:last-child{font-weight:800}
+.design-commandflow .shelf-filter-dot{width:7px;height:7px;border-radius:100%;border:1px solid var(--sh-muted)}
+.design-commandflow .dot-stocked{background:#33c491;border-color:#33c491}.design-commandflow .dot-low{background:#e4a33b;border-color:#e4a33b}
+.design-commandflow .shelf-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.design-commandflow .shelf-card{display:flex;flex-direction:column;min-height:218px;gap:10px;min-width:0;padding:13px;border:1px solid var(--sh-border);border-radius:11px;background:var(--sh-card)}
+.design-commandflow .shelf-status{align-self:flex-end;font-size:10px;font-weight:760;white-space:nowrap;border-radius:18px;padding:6px 9px;line-height:1.15;color:var(--sh-muted);border:1px solid var(--sh-border);background:var(--sh-bg)}
+.design-commandflow .shelf-stocked{background:var(--sh-good-bg);color:var(--sh-good);border-color:var(--sh-good)}
+.design-commandflow .shelf-low{background:var(--sh-low-bg);color:var(--sh-low);border-color:var(--sh-low)}
+.design-commandflow .shelf-grade-mark{align-self:center;min-height:68px;min-width:78px;padding:8px;border-radius:11px;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:6px;background:linear-gradient(150deg,#244b76,#0d2035);border:1px solid #466483;color:#c0dbfd}
+.design-commandflow .shelf-grade-mark span{font-size:13px;font-weight:820;letter-spacing:.1px;text-align:center}
+.design-commandflow .shelf-grade-mark svg{opacity:.75}
+.design-commandflow .shelf-card-copy{flex:1;min-width:0}
+.design-commandflow .shelf-card-copy small{display:block;font-size:10px;color:var(--sh-muted)}
+.design-commandflow .shelf-card-copy h3{font-size:13px;line-height:1.35;color:var(--sh-text);margin:5px 0;overflow-wrap:anywhere}
+.design-commandflow .shelf-card-copy p{font-size:11px;color:var(--sh-muted);margin:7px 0 0}
+.design-commandflow .shelf-issue,.design-commandflow .shelf-register{min-height:44px;width:100%;border-radius:8px;border:1px solid transparent;display:flex;justify-content:center;align-items:center;gap:7px;font-size:12px;font-weight:800}
+.design-commandflow .shelf-issue{background:#91bff6;color:#103454}
+.design-commandflow .shelf-issue:hover{background:#b5d8ff}
+.design-commandflow .shelf-register{background:var(--sh-bg);color:var(--sh-text);border-color:var(--sh-border)}
+.design-commandflow .shelf-register:hover{border-color:var(--sh-blue)}
+.design-commandflow .shelf-variants{border-top:1px solid var(--sh-border);padding-top:7px;display:grid;gap:3px}
+.design-commandflow .shelf-variants button{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:40px;background:transparent;border:0;color:var(--sh-text);text-align:left;font-size:10px}
+.design-commandflow .shelf-variants button span{color:var(--sh-blue);display:flex;align-items:center;gap:4px;white-space:nowrap}
+.design-commandflow .shelf-cards-list{grid-template-columns:1fr}
+.design-commandflow .shelf-cards-list .shelf-card{flex-direction:row;align-items:center;min-height:105px}
+.design-commandflow .shelf-cards-list .shelf-card .shelf-status{order:3;align-self:auto}
+.design-commandflow .shelf-cards-list .shelf-issue,.design-commandflow .shelf-cards-list .shelf-register{width:auto;min-width:125px}
+.design-commandflow .shelf-actions{display:grid;grid-template-columns:1.1fr repeat(3,minmax(0,1fr));gap:10px;margin-top:15px;padding:15px;border:1px solid var(--sh-border);border-radius:12px;background:var(--sh-bg)}
+.design-commandflow .shelf-actions>div{display:flex;flex-direction:column;justify-content:center;padding:0 8px}
+.design-commandflow .shelf-actions>div span{font-size:11px;color:var(--sh-text);font-weight:830;letter-spacing:1.2px}
+.design-commandflow .shelf-actions>div p{font-size:11px;color:var(--sh-muted);margin:6px 0;line-height:1.5}
+.design-commandflow .shelf-actions button{display:flex;align-items:center;gap:10px;min-height:82px;text-align:left;padding:13px;border:1px solid var(--sh-border);border-radius:10px;background:var(--sh-card);color:var(--sh-text)}
+.design-commandflow .shelf-actions button:hover{background:var(--sh-soft);border-color:var(--sh-blue)}
+.design-commandflow .shelf-actions button>svg:first-child{flex:none;color:var(--sh-blue)}.design-commandflow .shelf-actions button>svg:last-child{flex:none;margin-left:auto;color:var(--sh-muted)}
+.design-commandflow .shelf-actions button span{flex:1;min-width:0}.design-commandflow .shelf-actions button b{display:block;font-size:13px;color:var(--sh-text)}
+.design-commandflow .shelf-actions button small{display:block;font-size:10px;margin-top:5px;line-height:1.35;color:var(--sh-muted)}
+.design-commandflow .shelf-no-results{grid-column:1/-1;display:grid;justify-items:center;gap:8px;padding:40px 15px;color:var(--sh-muted);text-align:center}
+.design-commandflow .shelf-no-results h3{color:var(--sh-text);margin:0}.design-commandflow .shelf-no-results button{padding:10px 15px;border-radius:8px;border:1px solid var(--sh-border);background:var(--sh-soft);color:var(--sh-ink)}
+/* Command Flow appearance has a visible toggle track and dark sign-in state. */
+[data-theme="commandflow"][data-appearance="dark"] .login-layout,[data-theme="commandflow"][data-appearance="dark"] .login-main{background:#101d2f;color:#eef5ff}
+[data-theme="commandflow"][data-appearance="dark"] .login-card h1{color:#f2f7ff}
+[data-theme="commandflow"][data-appearance="dark"] .login-subtitle,[data-theme="commandflow"][data-appearance="dark"] .login-helper,[data-theme="commandflow"][data-appearance="dark"] .login-footnote{color:#b1c5d7}
+[data-theme="commandflow"][data-appearance="dark"] .login-theme-title,[data-theme="commandflow"][data-appearance="dark"] .login-card .eyebrow{color:#a2c8f7}
+[data-theme="commandflow"][data-appearance="dark"] .login-divider{color:#a3b5ca}
+[data-theme="commandflow"][data-appearance="dark"] .login-divider:before,[data-theme="commandflow"][data-appearance="dark"] .login-divider:after{background:#344e69}
+[data-theme="commandflow"][data-appearance="dark"] .login-google{background:#1b3047;color:#f0f6ff;border-color:#416181}
+[data-theme="commandflow"][data-appearance="dark"] .login-demo{background:#95c2fa;color:#0c2b4a;border-color:#95c2fa}
+[data-theme="commandflow"][data-appearance="dark"] .theme-option{background:#1b2f45;color:#e6f1ff;border-color:#3d5b77}
+[data-theme="commandflow"][data-appearance="dark"] .theme-option.selected{background:#244663;border-color:#80b6fb}
+[data-theme="commandflow"][data-appearance="dark"] .login-appearance-row{border-color:#304c66;color:#d9e7f7}
+[data-theme="commandflow"][data-appearance="dark"] .login-appearance-row .appearance-toggle{background:#1c3854;color:#edf7ff;border-color:#446788}
+[data-theme="commandflow"] .appearance-toggle:after{content:"";display:inline-block;width:32px;height:19px;border-radius:20px;border:1px solid #afbed0;background:radial-gradient(circle at 9px center,#fff 0 6px,transparent 7px),#9aaec1}
+[data-theme="commandflow"][data-appearance="dark"] .appearance-toggle:after{background:radial-gradient(circle at 23px center,#fff 0 6px,transparent 7px),#377dc9;border-color:#5098e4}
+[data-appearance="dark"] .design-commandflow .demo-pill{background:#223c57;border:1px solid #476784;color:#daeeff}
+[data-appearance="dark"] .design-commandflow .info-card,[data-appearance="dark"] .design-commandflow .data-panel,[data-appearance="dark"] .design-commandflow .metric{background:#192d43;border-color:#34516f;color:#e8f3ff}
+[data-appearance="dark"] .design-commandflow .info-card h3,[data-appearance="dark"] .design-commandflow .data-panel th{color:#f2f7ff}
+@media(max-width:1320px){.design-commandflow .shelf-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.design-commandflow .shelf-actions{grid-template-columns:repeat(3,1fr)}.design-commandflow .shelf-actions>div{grid-column:1/-1}}
+@media(max-width:1050px){.design-commandflow .shelf-workspace{grid-template-columns:1fr}.design-commandflow .shelf-groups-nav{grid-template-columns:repeat(3,minmax(0,1fr))}.design-commandflow .shelf-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.design-commandflow .shelf-header{flex-direction:column;align-items:stretch}.design-commandflow .shelf-search{width:100%}.design-commandflow .shelf-groups-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.design-commandflow .shelf-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.design-commandflow .shelf-actions{grid-template-columns:1fr}.design-commandflow .shelf-actions>div{grid-column:auto}.design-commandflow .shelf-actions button{min-height:66px}.design-commandflow .shelf-cards-list .shelf-card{flex-wrap:wrap}}
+@media(max-width:460px){.design-commandflow .shelf-groups,.design-commandflow .shelf-catalog{padding:12px}.design-commandflow .shelf-groups-nav{grid-template-columns:repeat(2,1fr);gap:6px}.design-commandflow .shelf-group{min-height:64px;padding:9px}.design-commandflow .shelf-group-icon,.design-commandflow .shelf-group>svg{display:none}.design-commandflow .shelf-group-body small{display:none}.design-commandflow .shelf-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.design-commandflow .shelf-card{padding:9px;min-height:230px}.design-commandflow .shelf-grade-mark{min-width:55px;min-height:56px}.design-commandflow .shelf-grade-mark span{font-size:11px}.design-commandflow .shelf-card-copy h3{font-size:12px}.design-commandflow .shelf-status{font-size:9px}.design-commandflow .shelf-catalog-head h2{font-size:19px}.design-commandflow .shelf-filters button{font-size:10px;min-height:42px}.design-commandflow .shelf-cards-list{grid-template-columns:1fr}.design-commandflow .supply-mobile-dock{grid-template-columns:repeat(6,minmax(0,1fr))}.design-commandflow .supply-mobile-dock .nav-item{font-size:9px}}
