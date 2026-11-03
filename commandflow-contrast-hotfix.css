@@ -84,3 +84,61 @@
 [data-appearance="dark"] .design-commandflow :is(button,input,select):focus-visible {
   outline:3px solid #8bbdfc;outline-offset:2px;
 }
+
+
+/* Team Access — prevent alternating white/dark rows and unreadable labels. */
+[data-appearance="dark"] .design-commandflow .data-panel .data-table {
+  color:#edf5ff!important;
+  background:#1d3047!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table thead,
+[data-appearance="dark"] .design-commandflow .data-table th {
+  background:#243b54!important;
+  color:#c8d9ee!important;
+  border-color:#46617e!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table tbody tr,
+[data-appearance="dark"] .design-commandflow .data-table tbody tr:nth-child(odd),
+[data-appearance="dark"] .design-commandflow .data-table tbody tr:nth-child(even) {
+  background:#1d3047!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table tbody tr:hover {
+  background:#28415c!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table td {
+  background:transparent!important;
+  border-color:#3d5571!important;
+  color:#dceaff!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table .item-name {
+  color:#f5f9ff!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table .item-sub {
+  color:#b2c8df!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table .btn {
+  background:#294768!important;
+  border-color:#537ca6!important;
+  color:#eff6ff!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table .btn:hover {
+  background:#35618e!important;
+}
+[data-appearance="dark"] .design-commandflow .notice {
+  background:#1c344f!important;
+  border-color:#3e6386!important;
+  color:#d0e5ff!important;
+}
+[data-appearance="dark"] .design-commandflow .notice svg { color:#9ec8fc!important }
+[data-appearance="dark"] .design-commandflow .data-table .tag.purple {
+  color:#dfcaff!important;background:#3c355c!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table .tag.blue {
+  color:#b9dbff!important;background:#27476e!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table .tag.green {
+  color:#aaf3d2!important;background:#17483c!important;
+}
+[data-appearance="dark"] .design-commandflow .data-table .tag.red {
+  color:#ffb6c1!important;background:#573340!important;
+}
