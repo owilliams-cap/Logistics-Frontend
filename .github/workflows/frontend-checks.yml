@@ -1,0 +1,33 @@
+name: Frontend checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check sheets-adapter.js
+          node --check config.js
+      - name: Backend simulation
+        run: node tests/test_backend.cjs
+      - name: Sheets adapter simulation
+        run: node tests/test_sheets_adapter.cjs
+      - name: Check public frontend assets
+        run: |
+          test -s command-flow.css
+          grep -q 'command-flow.css' index.html
+          grep -q 'insigniaIssue' app.js
+          grep -q 'dashboardCommandFlow' app.js
