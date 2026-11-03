@@ -1,0 +1,116 @@
+
+/* Command Flow: restrained navy operations UI, distinct from the existing Command concept. */
+[data-theme="commandflow"]{--cf-navy:#14243a;--cf-ink:#233c59;--cf-blue:#36669e;--cf-border:#dce5ef;--cf-bg:#f4f7fb;--cf-surface:#fff}
+[data-theme="commandflow"] .design-commandflow{background:var(--cf-bg);color:var(--cf-ink);min-height:100vh}
+.design-commandflow .sidebar{background:#14253d;border-right:1px solid #2e445e;width:246px}
+.design-commandflow .brand-logo{background:#27456b;box-shadow:none}
+.design-commandflow .nav-item{border-radius:9px;color:#bdcadb;min-height:46px}
+.design-commandflow .nav-item.active{background:#2b496b;color:white;box-shadow:inset 3px 0 0 #90b9ee}
+.design-commandflow .nav-item:hover{background:#203956;color:white}
+.design-commandflow .topbar{background:#fff;border-bottom:1px solid #e1e7ef}
+.design-commandflow .content{max-width:1500px;padding:32px 36px 70px}
+.design-commandflow .btn-primary{background:#315f9e;color:#fff;border-color:#315f9e;box-shadow:none}
+.design-commandflow .btn{border-radius:9px;min-height:44px}
+.design-commandflow .cf-hero{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:28px;background:linear-gradient(115deg,#172b43,#244462);padding:39px;border-radius:17px;color:#fff}
+.design-commandflow .cf-overline{color:#b7cce3;font-size:11px;font-weight:800;letter-spacing:1.7px}
+.design-commandflow .cf-hero h1{color:white;font-size:clamp(29px,4vw,48px);letter-spacing:-1.5px;margin:18px 0 10px}
+.design-commandflow .cf-hero p{color:#bed0e4;line-height:1.7;font-size:13px;max-width:570px}
+.design-commandflow .cf-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:24px}
+.design-commandflow .cf-hero-actions .btn-primary{background:#e6effc;color:#23466b;border-color:transparent;font-weight:800}
+.design-commandflow .cf-secondary{min-height:45px;border:1px solid #7290ac;background:transparent;color:#f6f8fc;border-radius:9px;display:inline-flex;align-items:center;gap:10px;padding:10px 17px}
+.design-commandflow .cf-hero-side{display:flex;flex-direction:column;gap:16px;padding:16px 0 10px 25px;border-left:1px solid #ffffff32;font-size:12px;color:#c3d5e5}
+.design-commandflow .cf-hero-side>span{font-size:10px;letter-spacing:1.3px;font-weight:800;color:#b0c9df}
+.design-commandflow .cf-hero-side>b{color:#fff;font-size:18px;margin-bottom:7px}
+.design-commandflow .cf-section-caption{font-size:10px;letter-spacing:1.8px;font-weight:850;color:#526984;margin:27px 0 12px}
+.design-commandflow .cf-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.design-commandflow .cf-kpi{border:1px solid var(--cf-border);background:var(--cf-surface);border-radius:13px;min-height:108px;padding:20px;display:grid;grid-template-columns:35px 1fr;align-items:center;gap:7px;text-align:left;color:#294767;box-shadow:0 5px 18px #122e4b09}
+.design-commandflow .cf-kpi>span{display:grid;place-items:center;width:39px;height:39px;background:#eaf1fa;border-radius:11px;color:#386ea1}
+.design-commandflow .cf-kpi strong{font-size:29px;line-height:1.1;color:#18385c}
+.design-commandflow .cf-kpi small{grid-column:2;color:#7189a2;font-size:11px}
+.design-commandflow .cf-kpi>svg{display:none}
+.design-commandflow .cf-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.design-commandflow .cf-actions>button{border:1px solid var(--cf-border);background:var(--cf-surface);min-height:180px;padding:20px;border-radius:13px;display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;color:#2b517b;box-shadow:0 5px 18px #122e4b09}
+.design-commandflow .cf-actions>button>span{color:#3c6f9f}
+.design-commandflow .cf-actions>button>div{display:grid;gap:7px;flex:1}
+.design-commandflow .cf-actions small{font-size:10px;letter-spacing:1.4px;color:#8496aa;font-weight:750}
+.design-commandflow .cf-actions strong{font-size:16px;color:#233f5d}
+.design-commandflow .cf-actions em{font-size:11px;color:#8598ac;font-style:normal}
+.design-commandflow .cf-actions button>svg{align-self:flex-end}
+.design-commandflow .cf-kpi:hover,.design-commandflow .cf-actions button:hover{border-color:#8bafcf;transform:translateY(-1px)}
+.design-commandflow .cf-bottom{display:grid;grid-template-columns:1.2fr .8fr;gap:15px;margin-top:20px}
+.design-commandflow .cf-panel{background:var(--cf-surface);border:1px solid var(--cf-border);border-radius:13px;padding:22px;min-width:0}
+.design-commandflow .cf-panel h2{font-size:18px;color:#234568;margin:0 0 10px}
+.design-commandflow .cf-handoff,.design-commandflow .cf-stockline{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid #e7edf4;font-size:12px}
+.design-commandflow .cf-handoff>span{display:grid;place-items:center;background:#edf3fa;color:#4a789e;border-radius:8px;width:35px;height:35px;flex:none}
+.design-commandflow .cf-handoff>div,.design-commandflow .cf-stockline>div{flex:1;min-width:0}
+.design-commandflow .cf-handoff b,.design-commandflow .cf-stockline b{display:block;color:#294967;font-weight:750}
+.design-commandflow .cf-handoff small,.design-commandflow .cf-stockline small{display:block;font-size:11px;color:#8094a9;margin-top:4px}
+.design-commandflow .cf-stockline>strong{font-size:11px;color:#4c769b;white-space:nowrap}
+.design-commandflow .supply-stack-row,.design-commandflow .supply-assignment-grid article,.design-commandflow .supply-order-columns article{background:#fff;border-color:#dbe5ee;box-shadow:none}
+.design-commandflow .supply-stack-actions button:first-child{background:#285c97;color:white}
+[data-theme="commandflow"] .login-hero{background:linear-gradient(130deg,#15283f,#2c5274);color:white}
+[data-theme="commandflow"] .login-hero h2{color:white}
+/* Independent, grade-first insignia directory used by all visual concepts. */
+.insignia-workspace{max-width:1470px;margin:0 auto}
+.insignia-heading{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;margin-bottom:20px}
+.insignia-heading h1{color:#233b57;font-size:30px;letter-spacing:-.8px;margin:7px 0}
+.insignia-heading p{font-size:12px;color:#758ba1;line-height:1.65;max-width:680px}
+.insignia-heading-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.insignia-heading-actions>button{min-height:44px}
+.insignia-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:19px}
+.insignia-overview>div{background:#fff;border:1px solid #dfe7f0;border-radius:12px;display:grid;gap:7px;padding:18px 21px}
+.insignia-overview span{font-size:10px;letter-spacing:1.2px;font-weight:800;color:#778ca5}
+.insignia-overview strong{font-size:29px;color:#254261}
+.insignia-overview small{color:#8497ab;font-size:11px}
+.insignia-layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:18px;align-items:start}
+.insignia-directory,.insignia-directory-main{border:1px solid #dfe7f0;border-radius:12px;background:#fff;padding:19px;min-width:0}
+.insignia-directory{padding:19px 11px}
+.insignia-side-heading{font-size:10px;letter-spacing:1.5px;font-weight:850;color:#72879e;padding:0 11px 15px}
+.insignia-directory nav{display:grid;gap:6px}
+.insignia-directory nav button{display:flex;flex-direction:column;align-items:stretch;text-align:left;gap:8px;background:transparent;border:1px solid transparent;border-radius:9px;padding:13px 11px;color:#45617e;min-height:60px}
+.insignia-directory nav button b{font-size:12px}
+.insignia-directory nav button small{font-size:10px;color:#8194a9}
+.insignia-directory nav button svg{vertical-align:middle;margin-right:8px}
+.insignia-directory nav button.selected{background:#e9f1fa;border-color:#d6e4f4;color:#2c6293}
+.insignia-side-note{margin:17px 8px 0;padding-top:15px;border-top:1px solid #e6edf5;font-size:11px;line-height:1.55;color:#8597aa}
+.insignia-list-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:20px}
+.insignia-list-heading h2{font-size:22px;color:#233f5f;margin:7px 0 0}
+.insignia-list-heading span{font-size:10px;letter-spacing:1.4px;font-weight:800;color:#869ab1}
+.insignia-reference-pill{background:#f1f6fb;border:1px solid #e0eaf4;border-radius:20px;padding:8px 12px;font-size:11px;color:#6e859c;white-space:nowrap}
+.insignia-grade-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.insignia-grade-card{border:1px solid #dfe7f0;border-radius:12px;background:#fff;padding:18px;display:flex;flex-direction:column;gap:13px;min-width:0}
+.insignia-grade-card:hover{border-color:#b6cadd}
+.insignia-grade-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.insignia-grade-mark{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:63px;height:56px;border-radius:10px;background:#193650;color:white;flex:none}
+.insignia-grade-mark b{font-size:11px}.insignia-grade-mark i{width:23px;height:2px;border-radius:2px;background:#8eb7d8}
+.insignia-grade-state{font-size:10px;font-weight:780;border-radius:20px;padding:7px 10px;background:#f0f4f8;color:#6c8095;white-space:nowrap}
+.insignia-grade-state.has-stock{background:#e5f4ed;color:#168365}
+.insignia-grade-state.is-none{background:#eeeae5;color:#756f63}
+.insignia-grade-name{flex:1}
+.insignia-grade-name small{display:block;font-size:10px;color:#8194a8;margin-bottom:7px}
+.insignia-grade-name h3{margin:0 0 5px;color:#2a4565;font-size:15px;line-height:1.35}
+.insignia-grade-name>span{color:#718ba5;font-size:11px}
+.insignia-variants{border-top:1px solid #e6edf4;padding-top:12px;display:grid;gap:12px}
+.insignia-variant{display:flex;align-items:center;gap:10px;justify-content:space-between;min-width:0}
+.insignia-variant>div{min-width:0}
+.insignia-variant b{display:block;overflow-wrap:anywhere;font-size:11px;color:#3b5470}
+.insignia-variant small{display:block;margin-top:5px;font-size:10px;color:#8798aa}
+.insignia-issue-button{background:#2d6399;color:white;border:0;border-radius:8px;min-height:41px;padding:8px 13px;font-size:11px;font-weight:800;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.insignia-grade-empty{border-top:1px solid #e9eef5;padding-top:12px;font-size:11px;color:#8396aa;line-height:1.5}
+.insignia-add-button{margin-top:auto;display:flex;align-items:center;gap:8px;border:1px solid #dce9f6;border-radius:8px;background:#f1f7fe;color:#285f92;min-height:43px;padding:10px 12px;font-size:11px;text-align:left}
+.insignia-bottom-note{display:flex;align-items:flex-start;gap:11px;margin-top:19px;padding:17px;background:#f4f8fc;border:1px solid #dfe8f1;border-radius:10px;color:#6b849d;font-size:11px;line-height:1.6}
+.insignia-pinned{display:flex;align-items:center;gap:13px;border:1px solid #d6e5f5;border-radius:11px;background:#f0f6fc;padding:15px}
+.insignia-pinned-icon{width:43px;height:43px;border-radius:9px;background:#deecf9;color:#28619b;display:grid;place-items:center;flex:none}
+.insignia-pinned small,.insignia-pinned strong,.insignia-pinned span{display:block}
+.insignia-pinned small{font-size:10px;letter-spacing:1.3px;color:#7187a1}
+.insignia-pinned strong{font-size:13px;color:#2b4d72;margin:4px 0}
+.insignia-pinned span{font-size:11px;color:#8296ad}
+[data-appearance="dark"] .design-commandflow{--cf-bg:#111d2e;--cf-surface:#1a3047;--cf-border:#38536d;color:#e9f1fc;background:#111d2e}
+[data-appearance="dark"] .design-commandflow .topbar{background:#16283c;border-color:#38536d}
+[data-appearance="dark"] .design-commandflow .cf-kpi,[data-appearance="dark"] .design-commandflow .cf-actions button,[data-appearance="dark"] .design-commandflow .cf-panel{background:#1c3047;border-color:#395571;color:#edf5ff}
+[data-appearance="dark"] .design-commandflow .cf-kpi strong,[data-appearance="dark"] .design-commandflow .cf-actions strong,[data-appearance="dark"] .design-commandflow .cf-panel h2,[data-appearance="dark"] .design-commandflow .cf-handoff b,[data-appearance="dark"] .design-commandflow .cf-stockline b{color:#eff6ff}
+[data-appearance="dark"] .design-commandflow .cf-kpi small,[data-appearance="dark"] .design-commandflow .cf-actions em,[data-appearance="dark"] .design-commandflow .cf-stockline small{color:#abc2d8}
+[data-appearance="dark"] .design-commandflow .supply-stack-row,[data-appearance="dark"] .design-commandflow .supply-assignment-grid article{background:#1c3047;color:#e9f1fc;border-color:#395571}
+@media(max-width:1200px){.design-commandflow .cf-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.design-commandflow .cf-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:940px){.design-commandflow .content{padding:25px 21px 96px}.design-commandflow .cf-hero{grid-template-columns:1fr}.design-commandflow .cf-hero-side{display:none}.design-commandflow .cf-bottom{grid-template-columns:1fr}.insignia-layout{grid-template-columns:1fr}.insignia-directory nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.insignia-directory nav button{min-height:71px}.insignia-side-note{display:none}}
+@media(max-width:650px){.design-commandflow .content{padding:18px 13px 105px}.design-commandflow .cf-hero{padding:23px 20px;border-radius:13px}.design-commandflow .cf-hero h1{font-size:29px}.design-commandflow .cf-kpis{gap:8px}.design-commandflow .cf-kpi{padding:13px;min-height:88px}.design-commandflow .cf-kpi strong{font-size:23px}.design-commandflow .cf-actions{grid-template-columns:1fr;gap:8px}.design-commandflow .cf-actions>button{min-height:95px;padding:15px;flex-direction:row;align-items:center}.design-commandflow .cf-actions>button>div{flex:1}.design-commandflow .cf-bottom{margin-top:12px}.insignia-heading{flex-direction:column;gap:10px}.insignia-heading h1{font-size:27px}.insignia-overview{grid-template-columns:repeat(3,1fr);gap:6px}.insignia-overview>div{padding:12px 9px}.insignia-overview strong{font-size:22px}.insignia-overview span{font-size:8px}.insignia-overview small{font-size:9px}.insignia-directory nav{grid-template-columns:repeat(2,minmax(0,1fr))}.insignia-directory-main{padding:13px}.insignia-grade-grid{grid-template-columns:1fr}.insignia-grade-card{min-height:0}.insignia-reference-pill{font-size:9px}.insignia-variant{align-items:flex-start;flex-wrap:wrap}.insignia-issue-button{min-height:44px}}
