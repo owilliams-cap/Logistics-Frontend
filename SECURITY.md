@@ -59,5 +59,19 @@ Sources:
 
 ## V5 issue accounting safeguards
 Issuance modes are explicit and only a temporary item with a real due date can be marked overdue. Permanent giveaways reduce stock on hand and become immutable issuance records in the demo; unknown-duration items stay assigned without an estimated return. **This does not solve** the underlying multi-request, non-atomic Google Sheets API behavior or permit official CAP property transactions.
-## V6 security boundary
-The new theme selector, dark mode, and tablet controls are presentation changes only. Issued-to-keep and used/consumed operations decrease the Sheet's on-hand stock before appending an issue event in the browser pilot. These separate API calls are not atomic, so this version is for fictional data only. A production system requires server-side verified identity and permissions, transaction locking, recovery/idempotency, controlled audit logs, and CAP review. Do not implement custom username/password authentication in public JavaScript.
+
+## V6 pilot boundary
+The new appearance toggle and touch-oriented navigation do not change backend security. New Used / consumed records and Issued to keep records both update `Items.total` before logging the issue in the direct-to-Sheets pilot; **these are not atomic cross-sheet operations**. The client-supplied issue type is checked in each demonstration backend. Actual production needs server-side authorization, idempotency, transaction integrity, CAP approvals and applicable data-region review. Do not implement username/password checks in GitHub Pages JavaScript.
+
+
+### V7 scope
+The new insignia grade catalog is public static reference data, not a private roster. Registered quantities and issue records remain in the selected demo/Google Sheets mode. Client-side role permissions are not sufficient for real CAP records; Google Sheet Editors can bypass frontend restrictions. No API secrets or protected service credentials belong in public source.
+
+
+## V9 accountability limitations
+
+V9 adds row-level unit IDs, partial-return counts, loss records and reconciliation history. In demo mode, these persist only in browser storage. In Google Sheets pilot mode, individual mutations can update multiple rows; this **is not a transactional system** and a mid-operation failure can leave inconsistent state. This must not be used for official CAP property or person-linked records without independent review.
+
+A `Lost` status removes the unit from recorded stock; the associated loan's outstanding quantity is resolved, but the audit event explicitly identifies it as a loss, **not a physical return**. A reconciliation of serialized equipment does not silently create or destroy IDs.
+
+A future operational release needs approved server-side role checks, transaction/idempotency handling, an independently protected and immutable audit log, controlled backup/restore, and reconciliation signoff. For CAP-accountable property, ORMS and CAP-required processes remain authoritative.

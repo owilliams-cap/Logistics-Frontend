@@ -1,0 +1,35 @@
+/* V9: field-accountability workflows. Compatible with Command Flow light/dark and tablet use. */
+.units-list{display:grid;gap:9px;margin-top:14px}
+.unit-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #d4dfeb;background:#f5f8fd;padding:12px 13px;border-radius:10px}
+.unit-entry>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.unit-entry b{font-size:12px;color:#243c58;overflow-wrap:anywhere}
+.unit-entry small{font-size:11px;color:#698098;overflow-wrap:anywhere}
+.unit-status{font-size:11px;color:#366da0;font-weight:700}
+.unit-entry .btn{min-height:42px;flex:none}
+.unit-selector{display:grid;gap:8px;border:1px solid #cddbeb;border-radius:11px;padding:14px;background:#f5f9fd;margin:12px 0}
+.unit-selector>b{font-size:13px;color:#263d59}
+.unit-selector>small{font-size:11px;color:#687e94;line-height:1.6}
+.unit-option{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid #d3e2ee;border-radius:8px;background:#fff;min-height:45px;color:#263d57;font-weight:650;font-size:11px;cursor:pointer}
+.unit-option:has(input:checked){border-color:#4b89bd;background:#e7f3ff}
+.unit-option input{width:18px;height:18px;accent-color:#346fac;flex:none}
+.unit-option>span{overflow-wrap:anywhere}
+.form-note{color:#6f839b;font-size:12px;line-height:1.6}
+.design-commandflow .supply-stack-actions{flex-wrap:wrap}
+.design-commandflow .supply-stack-actions>button{min-height:42px;padding:9px 10px;white-space:nowrap}
+.design-commandflow .supply-stack-row{grid-template-columns:36px minmax(0,1fr) 85px minmax(160px,max-content);gap:12px}
+.design-commandflow .supply-stock-heading{grid-template-columns:1fr 85px minmax(160px,max-content)}
+[data-appearance="dark"] .design-commandflow .unit-entry,
+[data-appearance="dark"] .design-commandflow .unit-selector{background:#1e3249;border-color:#405d7b;color:#e8f2ff}
+[data-appearance="dark"] .design-commandflow .unit-entry b,
+[data-appearance="dark"] .design-commandflow .unit-selector>b{color:#edf7ff}
+[data-appearance="dark"] .design-commandflow .unit-entry small,
+[data-appearance="dark"] .design-commandflow .unit-selector>small,
+[data-appearance="dark"] .design-commandflow .form-note{color:#b7cce2}
+[data-appearance="dark"] .design-commandflow .unit-status{color:#99c9f9}
+[data-appearance="dark"] .design-commandflow .unit-option{background:#253c55;border-color:#456587;color:#eaf4ff}
+[data-appearance="dark"] .design-commandflow .unit-option:has(input:checked){background:#2e537a;border-color:#8fbff5}
+@media(max-width:900px){.design-commandflow .supply-stack-row{grid-template-columns:30px minmax(0,1fr) auto}.design-commandflow .supply-stack-actions{grid-column:2 / -1;justify-content:flex-start}.design-commandflow .supply-stock-heading{display:none}}
+@media(max-width:530px){.unit-entry{flex-direction:column;align-items:stretch}.unit-entry .btn{align-self:flex-start}.design-commandflow .supply-stack-row{grid-template-columns:24px minmax(0,1fr) auto;padding:12px}.design-commandflow .supply-stack-actions{grid-column:1 / -1}.design-commandflow .supply-stack-actions>button{min-height:44px}.unit-selector{padding:10px}}
+
+.unit-inline-summary{margin-top:6px;color:#8194a8;font-size:10px;font-weight:600}
+[data-appearance="dark"] .design-commandflow .unit-inline-summary{color:#acc3db}
