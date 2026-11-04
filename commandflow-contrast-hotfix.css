@@ -142,3 +142,115 @@
 [data-appearance="dark"] .design-commandflow .data-table .tag.red {
   color:#ffb6c1!important;background:#573340!important;
 }
+
+
+/* Dashboard structure/spacing repair: match the current Command Flow markup.
+   Works in light and dark; appearance-specific palette below. */
+.design-commandflow .commandflow .cf-section-caption {
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  gap:8px 18px;line-height:1.5;
+}
+.design-commandflow .commandflow .cf-section-caption>span:first-child {
+  flex:0 0 auto;font-weight:800;letter-spacing:1.6px;
+}
+.design-commandflow .commandflow .cf-section-caption>span:last-child {
+  flex:1 1 auto;font-size:11px;letter-spacing:.1px;font-weight:500;
+}
+.design-commandflow .commandflow .cf-actions>button {
+  display:flex;flex-direction:column;align-items:flex-start;gap:11px;
+  min-width:0;padding:20px;min-height:190px;
+}
+.design-commandflow .commandflow .cf-actions .cf-action-icon {
+  display:grid;place-items:center;width:27px;height:27px;flex:0 0 auto;
+}
+.design-commandflow .commandflow .cf-actions .cf-action-copy {
+  display:flex;flex:1 1 auto;flex-direction:column;align-items:flex-start;
+  gap:7px;min-width:0;width:100%;
+}
+.design-commandflow .commandflow .cf-actions .cf-action-copy>small,
+.design-commandflow .commandflow .cf-actions .cf-action-copy>strong,
+.design-commandflow .commandflow .cf-actions .cf-action-copy>em {
+  display:block;width:100%;min-width:0;line-height:1.4;
+  overflow-wrap:break-word;white-space:normal;
+}
+.design-commandflow .commandflow .cf-actions .cf-action-copy>strong {
+  font-size:16px;line-height:1.25;
+}
+.design-commandflow .commandflow .cf-actions .cf-action-copy>em {
+  font-size:11px;line-height:1.55;font-weight:400;
+}
+.design-commandflow .commandflow .cf-actions>button>svg {
+  display:block;align-self:flex-end;flex:none;margin-top:auto;
+}
+.design-commandflow .commandflow .cf-panel-head {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin:0 0 14px;flex-wrap:wrap;
+}
+.design-commandflow .commandflow .cf-panel-head>div {
+  display:flex;flex-direction:column;gap:4px;min-width:0;
+}
+.design-commandflow .commandflow .cf-panel-head>div>span {
+  display:block;font-size:10px;font-weight:800;letter-spacing:1.2px;
+}
+.design-commandflow .commandflow .cf-panel-head h2 {
+  margin:0;font-size:18px;line-height:1.3;
+}
+.design-commandflow .commandflow .cf-panel-head>button {
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:40px;padding:8px 12px;border-radius:8px;
+  border:1px solid #ccd8e5;background:#f1f6fb;color:#234c79;
+  font-size:12px;font-weight:750;white-space:nowrap;cursor:pointer;
+}
+.design-commandflow .commandflow .cf-handoff {
+  display:flex;align-items:center;gap:12px;
+}
+.design-commandflow .commandflow .cf-handoff .cf-handoff-icon {
+  display:grid;place-items:center;width:29px;height:29px;
+  flex:0 0 29px;min-width:29px;
+}
+.design-commandflow .commandflow .cf-handoff>div:not(.cf-handoff-icon) {
+  flex:1 1 auto;min-width:0;
+}
+.design-commandflow .commandflow .cf-handoff>time {
+  flex:0 0 auto;font-size:11px;white-space:nowrap;margin-left:auto;
+}
+.design-commandflow .commandflow .cf-stockline>span {
+  white-space:nowrap;flex:none;margin-left:auto;font-size:11px;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-section-caption {
+  color:#a6c7ed;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-section-caption>span:last-child {
+  color:#a9bdd3;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-action-copy>small {
+  color:#a8bed7;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-action-copy>strong {
+  color:#f2f7ff;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-action-copy>em {
+  color:#c0d0e3;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-panel-head>div>span {
+  color:#9ebbe0;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-panel-head>button {
+  background:#243f5b;color:#d9ecff;border-color:#456d91;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-panel-head>button:hover {
+  background:#315578;border-color:#6b9cc8;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-handoff,
+[data-appearance="dark"] .design-commandflow .commandflow .cf-stockline {
+  border-color:#3d5571;
+}
+[data-appearance="dark"] .design-commandflow .commandflow .cf-handoff>time,
+[data-appearance="dark"] .design-commandflow .commandflow .cf-stockline>span {
+  color:#c3d7ed;
+}
+@media(max-width:680px) {
+  .design-commandflow .commandflow .cf-actions>button {min-height:0}
+  .design-commandflow .commandflow .cf-handoff {align-items:flex-start}
+  .design-commandflow .commandflow .cf-handoff>time {font-size:10px}
+}
